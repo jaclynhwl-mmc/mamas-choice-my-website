@@ -1,184 +1,52 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mama's Choice — Gentle & Safe Care for Mom & Baby</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+<!-- Our Favorites Section -->
+<section class="favorites-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Our Favorites</h2>
+      <a href="shop.html" class="btn-secondary">View All</a>
+    </div>
 
-    <!-- Navigation Header -->
-    <header>
-        <a href="index.html" class="logo">Mama's <span>Choice</span></a>
-        <nav>
-            <a href="index.html" class="active">Home</a>
-            <a href="shop.html">Best Sellers</a>
-            <a href="shop.html">Shop</a>
-            <a href="how-to-use.html">How to Use</a>
-        </nav>
-        <div class="nav-icons">
-            <span class="icon-badge">J</span>
-            <span class="icon-cart">0</span>
+    <!-- Dynamic 6-Card Grid synced directly with products-data.js -->
+    <div class="products-grid" id="favorites-grid"></div>
+  </div>
+</section>
+
+<!-- Include Products Data Script -->
+<script src="products-data.js?v=15"></script>
+<script>
+  // 6 Featured SKUs synced with products-data.js
+  const favoriteSkus = [
+    "52211693589", // Almond Boost Milk Booster
+    "21852692744", // Stretch Mark Treatment Series
+    "21677300747", // Baby Hair Vitamin Lotion
+    "8654428702",  // Stretch Mark Cream
+    "4888764496",  // Intensive Nipple Cream
+    "19142404696"  // Baby Skin Vitamin Lotion
+  ];
+
+  const favGrid = document.getElementById('favorites-grid');
+  
+  if (favGrid && typeof productsData !== 'undefined') {
+    favGrid.innerHTML = favoriteSkus.map(sku => {
+      const item = productsData[sku];
+      if (!item) return '';
+      return `
+        <div class="product-card">
+          <a href="product.html?id=${sku}">
+            <div class="card-image-wrap">
+              <span class="category-badge">${item.category}</span>
+              <img src="${item.img}" alt="${item.title}" loading="lazy">
+            </div>
+            <div class="card-content">
+              <h3 class="product-title">${item.title}</h3>
+              <div class="card-price">
+                <span class="orig-price">${item.origPrice}</span>
+                <span class="sale-price">${item.salePrice}</span>
+              </div>
+            </div>
+          </a>
         </div>
-    </header>
-
-    <!-- Expanded Hero Section -->
-    <section class="section-container" style="padding-top: 20px; padding-bottom: 30px;">
-        <div style="width: 100%; border-radius: var(--radius-lg); overflow: hidden; max-height: 550px; border: 1px solid var(--border-light);">
-            <img src="360_F_255675135_69TAnDMv2e0qSMaTFClx74WHmX2ylSNh.jpg" alt="Mama's Choice Care" style="width: 100%; height: 100%; object-fit: cover; object-position: center; display: block;">
-        </div>
-    </section>
-
-    <!-- Best Sellers Section Focused on Target Products -->
-    <section class="section-container">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
-            <h2>Our Favorites</h2>
-            <a href="shop.html" class="btn-primary" style="font-size: 0.85rem; padding: 8px 20px;">View All</a>
-        </div>
-
-        <div class="shop-grid">
-            
-            <!-- 1. Almond Boost Milk Booster -->
-            <a href="product.html?id=52211693589" class="product-card-link">
-                <div class="product-card">
-                    <div class="product-img-wrapper">
-                        <span class="badge">Milk Booster</span>
-                        <img src="https://down-my.img.susercontent.com/file/my-11134207-820la-mp33lvtfi0w1a0.webp" alt="Almond Boost Milk Booster">
-                    </div>
-                    <div class="product-title">Mama’s Choice Almond Boost Natural Milk Booster</div>
-                    <div class="price-box">
-                        <span class="old-price">MYR 59.90</span>
-                        <span class="current-price">MYR 35.90</span>
-                    </div>
-                </div>
-            </a>
-
-            <!-- 2. Stretch Mark Treatment Series -->
-            <a href="product.html?id=21852692744" class="product-card-link">
-                <div class="product-card">
-                    <div class="product-img-wrapper">
-                        <span class="badge">Treatment Series</span>
-                        <img src="https://down-my.img.susercontent.com/file/my-11134207-820l8-mmu85eweg93cc5.webp" alt="Stretch Mark Treatment Series">
-                    </div>
-                    <div class="product-title">Mama’s Choice Stretch Mark Treatment Series (Serum & Cream)</div>
-                    <div class="price-box">
-                        <span class="old-price">MYR 96.90</span>
-                        <span class="current-price">MYR 85.90</span>
-                    </div>
-                </div>
-            </a>
-
-            <!-- 3. Baby Hair Vitamin Lotion -->
-            <a href="product.html?id=21677300747" class="product-card-link">
-                <div class="product-card">
-                    <div class="product-img-wrapper">
-                        <span class="badge">Baby Choice</span>
-                        <img src="https://down-my.img.susercontent.com/file/my-11134207-820l9-mmijjermk1s5b6.webp" alt="Baby Hair Vitamin Lotion">
-                    </div>
-                    <div class="product-title">Mama’s Choice Baby Hair Vitamin Lotion 0m+</div>
-                    <div class="price-box">
-                        <span class="old-price">MYR 42.00</span>
-                        <span class="current-price">MYR 34.40</span>
-                    </div>
-                </div>
-            </a>
-
-            <!-- 4. Stretch Mark Cream -->
-            <a href="product.html?id=8654428702" class="product-card-link">
-                <div class="product-card">
-                    <div class="product-img-wrapper">
-                        <span class="badge">Best Seller</span>
-                        <img src="https://down-my.img.susercontent.com/file/my-11134207-820lf-mn2pa24clfya54.webp" alt="Stretch Mark Cream">
-                    </div>
-                    <div class="product-title">Mama’s Choice Stretch Mark Cream | Natural Skincare</div>
-                    <div class="price-box">
-                        <span class="old-price">MYR 41.90</span>
-                        <span class="current-price">MYR 39.90</span>
-                    </div>
-                </div>
-            </a>
-
-        </div>
-    </section>
-
-    <!-- Parent Reviews Section -->
-    <section class="section-container bg-soft">
-        <h2 style="margin-bottom: 5px;">Parent Reviews</h2>
-        <p style="color: #666; font-size: 0.9rem; margin-bottom: 25px;">Trusted by Malaysian families for safe, natural, and gentle skincare.</p>
-
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px;">
-            <div class="review-card">
-                <p style="font-size: 0.9rem; color: #444; margin-bottom: 15px;">"The gentle formula is perfect for my baby's delicate skin. It's the most soothing experience for both of us."</p>
-                <strong>Sarah & James</strong><br>
-                <small style="color: #888;">Verified Parent</small>
-            </div>
-            <div class="review-card">
-                <p style="font-size: 0.9rem; color: #444; margin-bottom: 15px;">"Finally, a brand that prioritizes safety and natural ingredients. My baby's skin has never looked healthier."</p>
-                <strong>Amira & Rizwan</strong><br>
-                <small style="color: #888;">Verified Parent</small>
-            </div>
-            <div class="review-card">
-                <p style="font-size: 0.9rem; color: #444; margin-bottom: 15px;">"The halal-certified products are a must-have for our family. Gentle, effective, and truly premium."</p>
-                <strong>Cheng & Mei</strong><br>
-                <small style="color: #888;">Verified Parent</small>
-            </div>
-        </div>
-    </section>
-
-    <!-- Brand Promise Section -->
-    <section class="section-container">
-        <h2>Our Promise</h2>
-        <p style="color: #666; font-size: 0.9rem; margin-bottom: 30px;">We believe in the power of nature and the importance of safety for your little one.</p>
-
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px;">
-            <div>
-                <h3 style="font-size: 1rem; margin-bottom: 8px;">100% Natural</h3>
-                <p style="font-size: 0.85rem; color: #666;">We use only the purest botanicals and organic extracts to nourish your baby's delicate skin.</p>
-            </div>
-            <div>
-                <h3 style="font-size: 1rem; margin-bottom: 8px;">Safe & Gentle</h3>
-                <p style="font-size: 0.85rem; color: #666;">Our formulas are dermatologically tested and free from harsh chemicals, ensuring a gentle touch.</p>
-            </div>
-            <div>
-                <h3 style="font-size: 1rem; margin-bottom: 8px;">Halal Certified</h3>
-                <p style="font-size: 0.85rem; color: #666;">Committed to Malaysian values, our products are Halal certified for the peace of mind of every parent.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="footer-top">
-            <p>From nourishing pregnancy skincare to comforting postpartum recovery items and breastfeeding aids, we provide gentle products that care for you, so you can focus on your new life.</p>
-        </div>
-        <div class="footer-grid">
-            <div class="footer-col">
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="shop.html">Catalog</a></li>
-                    <li><a href="how-to-use.html">How to Use</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>Get In Touch</h4>
-                <ul>
-                    <li>hello@mamaschoice.com.my</li>
-                    <li>+603 1234 5678</li>
-                    <li>Jalan Dungun, Bukit Damansara, 50490 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur</li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>Follow Us</h4>
-                <div class="social-icons">
-                    <a href="https://www.tiktok.com/@mamaschoicemy" target="_blank" class="social-icon">TK</a>
-                    <a href="https://www.facebook.com/share/1DtZMuaX15/?mibextid=wwXIfr" target="_blank" class="social-icon">FB</a>
-                    <a href="https://www.instagram.com/mamaschoice.my/" target="_blank" class="social-icon">IG</a>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-</body>
-</html>
+      `;
+    }).join('');
+  }
+</script>
