@@ -4,7 +4,7 @@ const productsData = {
     "category": "Mom's Care",
     "origPrice": "MYR 41.90",
     "salePrice": "MYR 38.90",
-    "img": "https://down-my.img.susercontent.com/file/my-11134207-820l7-mpw1m6uhbkzv75.webp",
+    "img": "https://down-my.img.susercontent.com/file/my-11134207-820l9-mpw1ltkh7ocv7e.webp",
     "shopeeUrl": "https://shopee.com.my/Mama's-Choice-Daily-Face-Moisturizer-Safe-Natural-Maternity-Skincare-For-Pregnant-i.388353292.8854442108?extraParams=%7B%22display_model_id%22%3A164968496883%2C%22model_selection_logic%22%3A3%7D",
     "utmContent": "mama_s_choice_daily_face_moist"
   },
