@@ -4,12 +4,12 @@ const productsData = {
     "category": "Mom's Care",
     "origPrice": "MYR 41.90",
     "salePrice": "MYR 38.90",
-    "img": "https://down-my.img.susercontent.com/file/my-11134207-820l7-mpw1m6uhbkzv75.webp",
+    "img": "https://down-my.img.susercontent.com/file/my-11134207-7rask-m6q8lxjazfs2be.webp",
     "shopeeUrl": "https://shopee.com.my/Mama's-Choice-Daily-Face-Moisturizer-Safe-Natural-Maternity-Skincare-For-Pregnant-i.388353292.8854442108",
     "utmContent": "daily_face_moisturizer"
   },
   "8654428702": {
-    "title": "Mama\u2019s Choice Stretch Mark Cream | Natural Pregnancy & Postpartum Skincare | Hypoallergenic & Deeply Moisturizing",
+    "title": "Mama’s Choice Stretch Mark Cream | Natural Pregnancy & Postpartum Skincare | Hypoallergenic & Deeply Moisturizing",
     "category": "Mom's Care",
     "origPrice": "MYR 41.90",
     "salePrice": "MYR 39.90",
@@ -22,7 +22,7 @@ const productsData = {
     "category": "Bundles",
     "origPrice": "MYR 79.90",
     "salePrice": "MYR 70.90",
-    "img": "https://down-my.img.susercontent.com/file/my-11134207-820l4-mln5fg867k75ad@resize_w900_nl.webp",
+    "img": "https://down-my.img.susercontent.com/file/my-11134207-7rasb-mca1ku0dcmw893.webp",
     "shopeeUrl": "https://shopee.com.my/Mama's-Choice-Breastfeeding-Starter-Kit-Almond-Milk-Booster-Nipple-Cream-i.388353292.8498842431",
     "utmContent": "breastfeeding_starter_kit"
   },
@@ -31,7 +31,7 @@ const productsData = {
     "category": "Bundles",
     "origPrice": "MYR 72.90",
     "salePrice": "MYR 54.90",
-    "img": "https://down-my.img.susercontent.com/file/my-11134207-820l6-mpw32164v2172e@resize_w900_nl.webp",
+    "img": "https://down-my.img.susercontent.com/file/my-11134207-7rasa-m9iaoh1rd3403b.webp",
     "shopeeUrl": "https://shopee.com.my/Mama's-Choice-Self-Care-Bundles-Face-Wash-Face-Moisturizer-Deodorant-Face-Moisturizer-i.388353292.8454500852",
     "utmContent": "self_care_bundles"
   },
@@ -99,7 +99,7 @@ const productsData = {
     "utmContent": "stretch_mark_advanced_care_du"
   },
   "52211693589": {
-    "title": "[New] Mama\u2019s Choice Almond Boost Natural Milk Booster | Banana Blossom, Fenugreek & Katuk | Halal Plant-Based Soya&Dates",
+    "title": "[New] Mama’s Choice Almond Boost Natural Milk Booster | Banana Blossom, Fenugreek & Katuk | Halal Plant-Based Soya&Dates",
     "category": "Mom's Care",
     "origPrice": "MYR 45.00",
     "salePrice": "MYR 35.90",
@@ -126,7 +126,7 @@ const productsData = {
     "utmContent": "baby_diaper_cream"
   },
   "21677300747": {
-    "title": "Mama\u2019s Choice Baby Hair Vitamin Lotion | Growth & Cradle Cap | 0m+ Safe | Hair Booster, Pelebat & Minyak Rambut Bayi",
+    "title": "Mama’s Choice Baby Hair Vitamin Lotion | Growth & Cradle Cap | 0m+ Safe | Hair Booster, Pelebat & Minyak Rambut Bayi",
     "category": "Baby Essentials",
     "origPrice": "MYR 42.00",
     "salePrice": "MYR 34.40",
@@ -139,7 +139,7 @@ const productsData = {
     "category": "Baby Essentials",
     "origPrice": "MYR 48.00",
     "salePrice": "MYR 39.90",
-    "img": "https://down-my.img.susercontent.com/file/my-11134207-7rasf-m6q8lxjazfs2be@resize_w900_nl.webp",
+    "img": "https://down-my.img.susercontent.com/file/my-11134207-7rasf-m6q8lxjazfs2be.webp",
     "shopeeUrl": "https://shopee.com.my/Mama's-Choice-Baby-Daily-Nourishing-Face-Cream-Organic-Hydrating-Moisturizing-for-Babies-i.388353292.12186161803",
     "utmContent": "baby_daily_nourishing"
   },
@@ -148,12 +148,12 @@ const productsData = {
     "category": "Baby Essentials",
     "origPrice": "MYR 19.90",
     "salePrice": "MYR 14.90",
-    "img": "https://down-my.img.susercontent.com/file/my-11134207-7rase-mde35b4tva5rb6@resize_w900_nl.webp",
+    "img": "https://down-my.img.susercontent.com/file/my-11134207-7rase-mde35b4tva5rb6.webp",
     "shopeeUrl": "https://shopee.com.my/Mama's-Choice-Baby-Kids-Toothpaste-Cavity-Protection-Fluoride-free-Oral-Care-Strawberry-Bubble-Gum-(45g)-i.388353292.21128542808",
     "utmContent": "baby_kids_toothpaste"
   },
   "21852692744": {
-    "title": "Mama\u2019s Choice Stretch Mark Treatment Series | Serum & Cream | 2x Faster | Pregnancy Safe",
+    "title": "Mama’s Choice Stretch Mark Treatment Series | Serum & Cream | 2x Faster | Pregnancy Safe",
     "category": "Mom's Care",
     "origPrice": "MYR 96.90",
     "salePrice": "MYR 85.90",
