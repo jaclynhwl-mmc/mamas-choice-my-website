@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Products — Mama's Choice</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navigation Header -->
+    <header>
+        <a href="index.html" class="logo">Mama's <span>Choice</span></a>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="shop.html">Best Sellers</a>
+            <a href="shop.html" class="active">Shop</a>
+            <a href="how-to-use.html">How to Use</a>
+        </nav>
+        <div class="nav-icons">
+            <span class="icon-badge">J</span>
+            <span class="icon-cart">0</span>
+        </div>
+    </header>
+
+    <!-- Main Shop Layout -->
+    <div class="shop-layout">
+        
+        <!-- Left Sidebar Filters -->
+        <aside class="sidebar">
+            <h3>Browse by</h3>
+            <ul>
+                <li><a href="#" class="category-btn active" onclick="filterCategory('all', event)">ALL PRODUCTS</a></li>
+                <li><a href="#" class="category-btn" onclick="filterCategory('baby', event)">BABY ESSENTIALS</a></li>
+                <li><a href="#" class="category-btn" onclick="filterCategory('bundle', event)">BUNDLES</a></li>
+                <li><a href="#" class="category-btn" onclick="filterCategory('bestseller', event)">BEST SELLERS</a></li>
+                <li><a href="#" class="category-btn" onclick="filterCategory('mom', event)">MOM'S ESSENTIALS</a></li>
+            </ul>
+
+            <h3 style="margin-top: 30px;">Filter by</h3>
+            <div class="filter-group">
+                <div class="filter-title">Product type <span>−</span></div>
+                <ul style="margin-top: 10px;">
+                    <li><label><input type="checkbox" onchange="filterCategory('baby', event)"> BABY ESSENTIALS</label></li>
+                    <li><label><input type="checkbox" onchange="filterCategory('bestseller', event)"> BEST SELLERS</label></li>
+                    <li><label><input type="checkbox" onchange="filterCategory('mom', event)"> MOM'S ESSENTIALS</label></li>
+                    <li><label><input type="checkbox" onchange="filterCategory('bundle', event)"> BUNDLES</label></li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- Right Product Grid -->
+        <main class="shop-main">
+            <h1 id="catalog-title" style="font-size: 2rem; margin-bottom: 5px;">ALL PRODUCTS</h1>
+            <p style="color: #777; font-size: 0.85rem; margin-bottom: 20px;">Mama's Choice Official Catalog</p>
+
+            <div class="shop-top-bar">
+                <span id="product-count">Products Displayed</span>
+                <div>Sort by: <strong>Recommended ∨</strong></div>
+            </div>
+
+            <div class="shop-grid" id="product-grid-container">
+                <!-- Rendered dynamically -->
+            </div>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-top">
+            <p>From nourishing pregnancy skincare to comforting postpartum recovery items and breastfeeding aids, we provide gentle products that care for you, so you can focus on your new life.</p>
+        </div>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html">Catalog</a></li>
+                    <li><a href="how-to-use.html">How to Use</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Get In Touch</h4>
+                <ul>
+                    <li>hello@mamaschoice.com.my</li>
+                    <li>+603 1234 5678</li>
+                    <li>Jalan Dungun, Bukit Damansara, 50490 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur</li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Follow Us</h4>
+                <div class="social-icons">
+                    <a href="https://www.tiktok.com/@mamaschoicemy" target="_blank" class="social-icon">TK</a>
+                    <a href="https://www.facebook.com/share/1DtZMuaX15/?mibextid=wwXIfr" target="_blank" class="social-icon">FB</a>
+                    <a href="https://www.instagram.com/mamaschoice.my/" target="_blank" class="social-icon">IG</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Load Data and Render Cards -->
+    <script src="products-data.js"></script>
+    <script>
+        const container = document.getElementById('product-grid-container');
+        let htmlBuffer = '';
+        let totalCount = 0;
+
+        for (const [id, item] of Object.entries(productsData)) {
+            let catClass = item.category === 'Baby Essentials' ? 'baby' : (item.category === 'Bundles' ? 'bundle' : 'mom');
+            if (item.title.toLowerCase().includes('toothpaste') || item.title.toLowerCase().includes('stretch mark') || item.title.toLowerCase().includes('shampoo')) {
+                catClass += ' bestseller';
+            }
+
+            htmlBuffer += `
+                <a href="product.html?id=${id}" class="product-card-link product-item ${catClass}">
+                    <div class="product-card">
+                        <div class="product-img-wrapper">
+                            <span class="badge">${item.category}</span>
+                            <img src="${item.img}" alt="${item.title}">
+                        </div>
+                        <div class="product-title">${item.title}</div>
+                        <div class="price-box">
+                            <span class="old-price">${item.origPrice}</span>
+                            <span class="current-price">${item.salePrice}</span>
+                        </div>
+                    </div>
+                </a>
+            `;
+            totalCount++;
+        }
+        container.innerHTML = htmlBuffer;
+        document.getElementById('product-count').innerText = `${totalCount} Products Displayed`;
+
+        function filterCategory(category, event) {
+            if (event) event.preventDefault();
+            const navBtns = document.querySelectorAll('.category-btn');
+            navBtns.forEach(btn => btn.classList.remove('active'));
+            if (event && event.target.tagName === 'A') {
+                event.target.classList.add('active');
+            }
+            const products = document.querySelectorAll('.product-item');
+            let visibleCount = 0;
+            products.forEach(item => {
+                if (category === 'all' || item.classList.contains(category)) {
+                    item.style.display = 'block';
+                    visibleCount++;
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+            document.getElementById('product-count').innerText = `${visibleCount} Products Displayed`;
+        }
+    </script>
+
+</body>
+</html>
