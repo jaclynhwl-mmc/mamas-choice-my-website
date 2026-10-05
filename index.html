@@ -6,47 +6,108 @@
       <a href="shop.html" class="btn-secondary">View All</a>
     </div>
 
-    <!-- Dynamic 6-Card Grid synced directly with products-data.js -->
-    <div class="products-grid" id="favorites-grid"></div>
+    <div class="products-grid">
+      <!-- 1. Almond Boost Milk Booster -->
+      <div class="product-card">
+        <a href="product.html?id=52211693589">
+          <div class="card-image-wrap">
+            <span class="category-badge">Milk Booster</span>
+            <img src="https://down-my.img.susercontent.com/file/my-11134207-820lf-mmv5thtgxs011d.webp" alt="Mama's Choice Almond Boost Natural Milk Booster" loading="lazy">
+          </div>
+          <div class="card-content">
+            <h3 class="product-title">Mama's Choice Almond Boost Natural Milk Booster</h3>
+            <div class="card-price">
+              <span class="orig-price">MYR 59.90</span>
+              <span class="sale-price">MYR 35.90</span>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- 2. Stretch Mark Treatment Series -->
+      <div class="product-card">
+        <a href="product.html?id=21852692744">
+          <div class="card-image-wrap">
+            <span class="category-badge">Treatment Series</span>
+            <img src="https://down-my.img.susercontent.com/file/my-11134207-820l8-mmu85eweg93cc5.webp" alt="Mama's Choice Stretch Mark Treatment Series" loading="lazy">
+          </div>
+          <div class="card-content">
+            <h3 class="product-title">Mama's Choice Stretch Mark Treatment Series (Serum & Cream)</h3>
+            <div class="card-price">
+              <span class="orig-price">MYR 96.90</span>
+              <span class="sale-price">MYR 85.90</span>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- 3. Baby Hair Vitamin Lotion -->
+      <div class="product-card">
+        <a href="product.html?id=21677300747">
+          <div class="card-image-wrap">
+            <span class="category-badge">Baby Choice</span>
+            <img src="https://down-my.img.susercontent.com/file/my-11134207-820lg-mmijj1ua57nn98.webp" alt="Mama's Choice Baby Hair Vitamin Lotion" loading="lazy">
+          </div>
+          <div class="card-content">
+            <h3 class="product-title">Mama's Choice Baby Hair Vitamin Lotion 0m+</h3>
+            <div class="card-price">
+              <span class="orig-price">MYR 39.90</span>
+              <span class="sale-price">MYR 34.40</span>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- 4. Stretch Mark Cream -->
+      <div class="product-card">
+        <a href="product.html?id=8654428702">
+          <div class="card-image-wrap">
+            <span class="category-badge">Best Seller</span>
+            <img src="https://down-my.img.susercontent.com/file/my-11134207-820lf-mn2pa24clfya54.webp" alt="Mama's Choice Stretch Mark Cream" loading="lazy">
+          </div>
+          <div class="card-content">
+            <h3 class="product-title">Mama's Choice Stretch Mark Cream | Natural Skincare</h3>
+            <div class="card-price">
+              <span class="orig-price">MYR 41.90</span>
+              <span class="sale-price">MYR 39.90</span>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- 5. Intensive Nipple Cream -->
+      <div class="product-card">
+        <a href="product.html?id=4888764496">
+          <div class="card-image-wrap">
+            <span class="category-badge">Mom's Care</span>
+            <img src="https://down-my.img.susercontent.com/file/my-11134207-820le-mpvphpds5yxa86.webp" alt="Mama's Choice Intensive Nipple Cream" loading="lazy">
+          </div>
+          <div class="card-content">
+            <h3 class="product-title">Mama's Choice Intensive Nipple Cream 15ml</h3>
+            <div class="card-price">
+              <span class="orig-price">MYR 39.90</span>
+              <span class="sale-price">MYR 37.90</span>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- 6. Baby Skin Vitamin Lotion -->
+      <div class="product-card">
+        <a href="product.html?id=19142404696">
+          <div class="card-image-wrap">
+            <span class="category-badge">Baby Choice</span>
+            <img src="https://down-my.img.susercontent.com/file/my-11134207-820lg-mlwtzzvzy0w319.webp" alt="Mama's Choice Baby Skin Vitamin Lotion" loading="lazy">
+          </div>
+          <div class="card-content">
+            <h3 class="product-title">Mama's Choice Baby Skin Vitamin Lotion</h3>
+            <div class="card-price">
+              <span class="orig-price">MYR 46.90</span>
+              <span class="sale-price">MYR 37.90</span>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
   </div>
 </section>
-
-<!-- Include Products Data Script -->
-<script src="products-data.js?v=15"></script>
-<script>
-  // 6 Featured SKUs synced with products-data.js
-  const favoriteSkus = [
-    "52211693589", // Almond Boost Milk Booster
-    "21852692744", // Stretch Mark Treatment Series
-    "21677300747", // Baby Hair Vitamin Lotion
-    "8654428702",  // Stretch Mark Cream
-    "4888764496",  // Intensive Nipple Cream
-    "19142404696"  // Baby Skin Vitamin Lotion
-  ];
-
-  const favGrid = document.getElementById('favorites-grid');
-  
-  if (favGrid && typeof productsData !== 'undefined') {
-    favGrid.innerHTML = favoriteSkus.map(sku => {
-      const item = productsData[sku];
-      if (!item) return '';
-      return `
-        <div class="product-card">
-          <a href="product.html?id=${sku}">
-            <div class="card-image-wrap">
-              <span class="category-badge">${item.category}</span>
-              <img src="${item.img}" alt="${item.title}" loading="lazy">
-            </div>
-            <div class="card-content">
-              <h3 class="product-title">${item.title}</h3>
-              <div class="card-price">
-                <span class="orig-price">${item.origPrice}</span>
-                <span class="sale-price">${item.salePrice}</span>
-              </div>
-            </div>
-          </a>
-        </div>
-      `;
-    }).join('');
-  }
-</script>
