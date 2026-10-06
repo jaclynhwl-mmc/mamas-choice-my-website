@@ -4,13 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product Details — Mama's Choice</title>
+
+    <!-- Favicon Links for Ad Crawlers & Browsers -->
+    <link rel="icon" type="image/png" href="Logo Mamas Choice-02.png" sizes="32x32">
+    <link rel="shortcut icon" href="Logo Mamas Choice-02.png">
+    <link rel="apple-touch-icon" href="Logo Mamas Choice-02.png">
+
+    <!-- Open Graph Metadata for ChatGPT Ads & Social Media Crawlers -->
+    <meta property="og:title" content="Mama's Choice — Gentle & Safe Care for Mom & Baby">
+    <meta property="og:description" content="Safe, Natural & Halal Skincare for Mom & Baby">
+    <meta property="og:image" content="https://shop.mamaschoice.my/Logo%20Mamas%20Choice-02.png">
+    <meta property="og:url" content="https://shop.mamaschoice.my">
+    <meta property="og:type" content="website">
+
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <!-- Navigation Header -->
     <header>
-        <a href="index.html" class="logo">Mama's <span>Choice</span></a>
+        <a href="index.html" class="logo">
+            <img src="Logo Mamas Choice-02.png" alt="Mama's Choice Logo" style="height: 40px; display: block;">
+        </a>
         <nav>
             <a href="index.html">Home</a>
             <a href="shop.html">Best Sellers</a>
@@ -84,8 +99,8 @@
         const productId = params.get('id') || '8854442108';
         const item = productsData[productId] || productsData['8854442108'];
 
-        // Build full UTM tracked URL
-        const fullShopeeLink = `${item.shopeeUrl}?utm_source=website&utm_campaign=website&utm_content=${item.utmContent}`;
+        // Build full UTM tracked URL (using & to append parameters cleanly)
+        const fullShopeeLink = `${item.shopeeUrl}&utm_source=website&utm_campaign=website&utm_content=${item.utmContent}`;
 
         document.getElementById('pdp-img').src = item.img;
         document.getElementById('pdp-title').innerText = item.title;
